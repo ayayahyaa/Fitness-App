@@ -1,0 +1,195 @@
+{
+  "WORKOUTS_PAGE": {
+    "TITLE": "Workouts",
+    "SUBTITLE": "Fitness Class",
+    "DESCRIPTION": "Transform your body with our<br>dynamic <span class='text-primary'>upcoming workouts</span>"
+  },
+  "HEALTHY_PAGE": {
+    "TITLE": "Healthy",
+    "SUBTITLE": "Healthy Nutritions",
+    "DESCRIPTION": "fuelyour your fitness journey with<br>customized <span class='text-primary'>meals plans</span> for you"
+  },
+  "about": {
+    "Title": "About us",
+    "SubTitle": "EMPOWERING YOU TO ACHIEVE<br><span class='text-[#FF4100]'>YOUR FITNESS</span> GOALS",
+    "Paragraph": "We believe fitness is more than just a workout—it's a lifestyle. With top-of-the-line facilities, certified trainers, and a supportive community, we're here to inspire and guide you every step of the way.",
+    "start": "Get Started"
+  },
+  "Features": [
+    {
+      "title": "Personal Trainer",
+      "description": "Achieve your fitness goals with the guidance of our certified trainers."
+    },
+    {
+      "title": "Cardio Programs",
+      "description": "From steady-state runs to interval sprints, our treadmill programs."
+    },
+    {
+      "title": "Quality Equipment",
+      "description": "Our gym is equipped with the latest cardio & strength machines."
+    },
+    {
+      "title": "Healthy Nutritions",
+      "description": "Fuel your fitness journey with customized meal plans for you."
+    }
+  ],
+  "account": {
+    "English": "English",
+    "yourGoal": "your Goal",
+    "level": "level",
+    "weight": "weight",
+    "tAPTOCHANGE": "tAP TO CHANGE",
+    "ChangePassword": "Change Password",
+    "SelectLanguage": "Select Language",
+    "logout": "Logout",
+    "Mood": "mood",
+    "start": "Get Started"
+  },
+  "why": {
+    "Title": "Why Us",
+    "SubTitle": "Elevate fitness with the <br> <span class='text-[#FF4100]'>best way</span> possible",
+    "Paragraph": "We offer a fitness journey that's tailored to your goals, supported by professional trainers and a welcoming community. Whether it's weight loss, strength building, or overall wellness, our proven methods ensure the best results.",
+    "Feature1.Title": "Personalized Fitness Plans",
+    "Feature1.Paragraph": "We customize every workout based on your unique goals and fitness level to ensure you achieve the best possible progress.",
+    "Feature2.Title": "Results-Driven Focus",
+    "Feature2.Paragraph": "Everything we offer is designed to help you achieve measurable results, whether you're aiming for weight loss or increased strength.",
+    "Feature3.Title": "State-of-the-Art Equipment",
+    "Feature3.Paragraph": "We provide the latest in gym equipment—from cardio machines to free weights—designed to support every training style."
+  },
+  "footer": {
+    "Slogan": "Push harder, go further. Your<br/> fitness journey starts today!",
+    "ContactUs.Title": "CONTACT US",
+    "ContactUs.Phone": "+91 123 456 789",
+    "ContactUs.Email": "info@gmail.com",
+    "Timing.Title": "OUR GYM TIMING",
+    "Timing.Weekdays": "Mon - Fri : 08:00 AM - 10:00 PM",
+    "Timing.Weekend": "Sat - Sun : 08:00 AM - 09:00 PM",
+    "Location.Title": "OUR LOCATION",
+    "Location.Address": "2715 Ash Dr. San Jose, South Dakota 83475"
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "classes": "Classes",
+    "healthy": "Healthy",
+    "filled-btn": "LOGIN",
+    "outlined-btn": "SIGN UP"
+  },
+  "hero": {
+    "header-1": "Your body can",
+    "header-2": "stand almost",
+    "header-3": "anything",
+    "details": "It's your mind that needs convincing. Push past your limits, stay committed, and watch as your body transform into a powerhouse of strength and resilience. Start your journey today & become truly capable!",
+    "heroCount-firstCount-num": "1200+",
+    "heroCount-firstCount-text": "Active Members",
+    "heroCount-secondCount-num": "12+",
+    "heroCount-secondCount-text": "Certified Trainers",
+    "heroCount-thirdCount-num": "20+",
+    "heroCount-thirdCount-text": "Year Of Experience",
+    "filled-btn": "Get Started",
+    "outlined-btn": "Explore More"
+  },
+  "auth": {
+    "span": "Hey There",
+    "login": "Login",
+    "register": "Register",
+    "next": "Next",
+    "email": "Email",
+    "password": "Password",
+    "new-password": "New password",
+    "confirm-password": "Confirm password",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "login-page": {
+      "title": "WELCOME BACK",
+      "forget-password": "Forget Password ?",
+      "or": "Or",
+      "no-account": "Dont have an account yet ?"
+    },
+    "register-page": {
+      "title": "Create An Account",
+      "have-account": "Already Have an account ?"
+    },
+    "forget-password": "Forget Password",
+    "enter-email": "Enter Your Email",
+    "send-otp": "Send OTP",
+    "otp-code": "OTP Code",
+    "enter-otp": "Enter Your OTP Check your email",
+    "confirm": "Confirm",
+    "no-code": "didn't recieve verification code?",
+    "resend-code": "Resend code?",
+    "create-password": "Create new password",
+    "new-password-heading": "Make sure its 8 characters or more",
+    "done": "Done",
+    "gender.heading": "tell us about yourself!",
+    "gender.desc": "We Need To Know Your Gender",
+    "male": "Male",
+    "female": "Female",
+    "age": "How Old Are you ?",
+    "weight": "what is your weight ?",
+    "height": "what is your height ?",
+    "goal": "what is your goal ?",
+    "level": "your regular physicalactivity level ?",
+    "description": "this helps us create Your personalized plan",
+    "required": "is required!!",
+    "invalid": "is invalid!!",
+    "password-pattern": "Password should have at least uppercase and lowercase letter, number and special char!!",
+    "password-mismatch": "Password and confirm password should match!!",
+    "goal.gain-weight": "Gain Weight",
+    "goal.lose-weight": "Lose Weight",
+    "goal.get-fitter": "Get Fitter",
+    "goal.more-flexible": "Gain more flexible",
+    "goal.basic": "Learn The Basic",
+
+    "level.rookie": "Rookie",
+    "level.beginner": "Beginner",
+    "level.intermediate": "Intermediate",
+    "level.advance": "Advance",
+    "level.beast": "True Beast"
+  },
+  "outlined-btn": "Read More",
+  "card": {
+    "card-btn": "Explore",
+    "no-data": "No Data Available"
+  },
+  "Healthy_Nutritions": {
+    "TITLE": "Healthy",
+    "SUBTITLE": "Healthy Nutritions",
+    "DESCRIPTION": "Fuel your fitness journey with <br> customized <span class='text-primary'>meal plans</span> for you",
+    "see_more": "See More",
+    "see_less": "See Less"
+  },
+  "Meal_Details": {
+    "SomethingWentWrong": "Something went wrong",
+    "Title": "Healthy",
+    "No_Data": "No preview Available",
+    "P": "Ingredients"
+  },
+  "Chatbot": {
+    "HeyAskMe": "Hey Ask Me",
+    "TapToClose": "Tap To Close",
+    "WelcomeMessage":"Welcome to Fitness App, Say Hey to Team 5",
+    "SmartCoach":"Smart Coach",
+  "PreviousConversations":"Previous Conversations",
+  "AskMeAnything": "Ask me anything..."
+  },
+  "BannerItems": [
+  "Live Classes",
+  "Outdoor & Online",
+  "Personal Training",
+  "Live Classes",
+  "Personal Trainers",
+  "Personal Trainers",
+  "Live Classes",
+  "Outdoor & Online",
+  "Personal Trainers",
+  "Live Classes",
+  "Personal Trainers"
+],
+  "ClassesDetails": {
+    "p-1": "Expertly designed workout.",
+    "p-2": "Professional guidance included.",
+    "p-3":"Suitable for all levels.",
+    "Recommendation":"Recommendation for you"
+  }
+}

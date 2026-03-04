@@ -1,0 +1,10 @@
+.marquee-item {
+  animation: marquee-move var(--speed) linear infinite;
+  animation-delay: calc(var(--single-slide-speed) * var(--position) * -1);
+}
+
+@keyframes marquee-move {
+  to {
+    transform: translateX(calc(-100cqw - 100%));
+  }
+}

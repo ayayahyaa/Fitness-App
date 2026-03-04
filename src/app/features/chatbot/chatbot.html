@@ -1,0 +1,175 @@
+
+<button
+  class="fixed chatbot  flex flex-col items-center cursor-pointer z-50 transition-all duration-300 w-20 md:w-[136px]"
+  [ngStyle]="floatingDivStyle"
+  (click)="toggleChat()">
+  <img src="./images/emo.png" alt="Chatbot" />
+  <button class="font-baloo font-bold rounded-full border cursor-pointer bg-primary text-[10px] md:text-[20px] w-[100px] md:w-[150px] text-white border-primary">
+    {{ floatingBtnText }}
+  </button>
+</button>
+
+<!-- Chat Window -->
+  <div>
+  
+  @if (chatVisible) {
+    <div
+  
+  class="chat w-[375px] shadow-xl border rounded-[20px] border-primary flex flex-col overflow-hidden z-40 fixed
+    max-sm:inset-0
+    max-sm:w-full
+    max-sm:rounded-none
+    max-sm:border"
+  [ngStyle]="chatWindowStyle">
+<div class="overlay flex flex-col h-[753px] ">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between   text-[#F3F3F4] px-4 py-3">
+    <h3 class="font-semibold">{{'Chatbot.SmartCoach' | translate}}</h3>
+
+      <p-drawer 
+      [visible]="Visiable"
+      (onHide)="Visiable=false"
+      [appendTo]="chatWindowStyle"
+      position="left"
+      [modal]="false"
+      [style]="{ height: '248px', width:'263px' ,border:'none', background:'none' }">
+    <ng-template #headless>
+        <div class="flex flex-col toggle">
+            <div class="flex items-center px-3 pt-4 shrink-0">
+                <span class="inline-flex items-center gap-2">
+              
+                    <span class="font-semibold text-xl fony-baloo text-white">{{'Chatbot.PreviousConversations' | translate}}</span>
+                </span>
+            </div>
+            <div class="overflow-y-auto">
+                <ul class="list-none p-4 m-0 ">
+                    <li>
+                        <ul class="list-none p-0 m-0 overflow-hidden">
+                            <li>
+                                <a pRipple class="flex items-center  cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
+                                  <div class="flex items-center justify-between w-[231px]">
+                                    <div class="di">
+                                      <span class="font-baloo text-white text-[12px] font-medium">Lorem ipsum dolor sit amet</span> 
+                                    </div>
+                                  <div class="arrow">
+                                    <img src="./images/Arrow - Left.png" alt="">
+                                  </div>
+                                  </div>
+                                </a>
+                            </li>
+
+                              <li>
+                                <a pRipple class="flex items-center  cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
+                                  <div class="flex items-center justify-between w-[231px]">
+                                    <div class="di">
+                                      <span class="font-baloo text-white text-[12px] font-medium">Lorem ipsum dolor sit amet</span> 
+                                    </div>
+                                  <div class="arrow">
+                                    <img src="./images/Arrow - Left.png" alt="">
+                                  </div>
+                                    
+                                  </div>
+                                </a>
+                            </li>
+                              <li>
+                                <a pRipple class="flex items-center  cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple">
+                                  <div class="flex items-center justify-between w-[231px]">
+                                    <div class="di">
+                                      <span class="font-baloo text-white text-[12px] font-medium">Lorem ipsum dolor sit amet</span> 
+                                    </div>
+                                  <div class="arrow">
+                                    <img src="./images/Arrow - Left.png" alt="">
+                                  </div>
+                                  </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ng-template>
+</p-drawer>
+
+@if (Visiable) {
+  <button
+  
+  class="fixed inset-0 bg-transparent z-[40]"
+  (click)="Visiable=false">
+</button>}
+
+    <div class="flex gap-2">
+      <p-button (click)="Visiable = true" icon="pi pi-bars"   class="btn-wrapper block "
+  styleClass="menu-btn " />
+  <button (click)="toggleChat()" class="text-2xl leading-none cursor-pointer text-primary md:hidden">×</button>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div
+    id="chat-container"
+    class="flex-1 overflow-y-auto p-4 space-y-3 ">
+    @for (msg of messages; track $index) {
+        <div  class="flex items-start gap-2"
+  [ngClass]="{ 'justify-end': msg.sender === 'user' }">
+
+  <!-- Avatar -->
+    @if (msg.sender === 'bot') {
+      <img src="./images/bot.png" alt="bot"  class="w-10 h-10 rounded-full"/>}
+  <div
+    class="max-w-[70%] p-3 rounded-xl "
+    [ngClass]="{
+      'bg-[#FF6A0080] text-rose-50 ': msg.sender === 'user',
+      'bg-[#24242480] text-white ': msg.sender === 'bot'
+    }">
+    {{ msg.text }}
+  </div>
+  @if (msg.sender === 'user') {
+    <img
+    src="./images/userChat.png"   
+    class="w-10 h-10 rounded-full"
+    alt="userChat"/>
+}
+</div>
+}
+</div>
+<div class=" mt-auto p-4 border-t flex gap-2  relative">
+
+  <div class="relative flex-1">
+    <!-- ICON INSIDE INPUT (BEFORE TYPING) -->
+      @if (!userInput) {
+      <img 
+      src="./images/system-uicons_write.png"   
+      class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
+      alt="system-uicons_write"/>}
+    <!-- ICON INSIDE INPUT (AFTER TYPING) -->
+    @if (userInput) {
+      <div  class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer">
+    <i 
+  class="pi pi-send text-orange-600 cursor-pointer"
+  tabindex="0"
+  (click)="sendMessage()"
+  (keydown.enter)="sendMessage()"></i>
+    </div>
+    }
+    
+    
+    <input
+    
+      type="text"
+      pInputText
+      [(ngModel)]="userInput"
+      (keydown.enter)="sendMessage()"
+      [placeholder]="'Chatbot.AskMeAnything' | translate"
+      class="w-full border rounded-full pl-10 p-2 focus:outline-none text-[#F3F3F4] border-[#F3F3F4]"
+    />
+  </div>
+
+</div>
+</div>
+</div>
+
+}
+</div>
+

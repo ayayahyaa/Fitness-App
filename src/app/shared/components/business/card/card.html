@@ -1,0 +1,22 @@
+  <div class="max-w-[403px] h-[403px] rounded-[1.125rem] bg-bg-workouts m-2 bg-card relative overflow-hidden">
+<img
+  [src]="data?.image ??  '/images/img.png'"
+  [alt]="data?.label ?? ''"
+  class="card-image"
+/>
+<div class="overlay">
+  <h3 class="font-baloo font-bold line-clamp-1 rtl:text-right rtl:mr-2 pl-2.5 text-[1.375rem] leading-[2.1rem] tracking-[.14rem] text-title-text uppercase text-left">
+    {{ data.label }}
+  </h3>
+    <button (click)="handleClick()" class="flex flex-row gap-2 items-center cursor-pointer ml-2 rtl:mr-2">
+    <h3 class="font-baloo font-medium text-xl text-primary capitalize">
+  {{ 'card.card-btn' | translate }}
+</h3>
+    <div class="rounded-full w-6 h-6 bg-primary flex items-center justify-center ltr:end-0 rtl:start-0">
+      <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.77016 0.339556C4.94268 1.16704 3.43467 1.16738 2.60685 0.339553L2.26744 0.000141303L1.58861 0.678964L1.92803 1.01838C2.53014 1.62049 3.35898 1.92121 4.18817 1.92155L0.000172917 6.10955L0.678995 6.78837L4.86699 2.60037C4.86733 3.42956 5.16805 4.2584 5.77017 4.86051L6.10958 5.19993L6.7884 4.5211L6.44899 4.18169C5.62116 3.35387 5.6215 1.84586 6.44899 1.01838L6.7884 0.678967L6.10958 0.000144674L5.77016 0.339556Z" fill="#242424"/>
+      </svg>
+    </div>
+  </button>
+</div>
+</div>

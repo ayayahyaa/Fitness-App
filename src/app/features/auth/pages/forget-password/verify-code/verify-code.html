@@ -1,0 +1,65 @@
+<div>
+  <div class="text-center mb-4">
+    <h2 class="text-4xl font-extrabold">{{'auth.otp-code' | translate}}</h2>
+  </div>
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+    class="border border-[#D3D3D3] p-9 rounded-3xl flex flex-col gap-6"
+  >
+    <h3 class="text-center">{{'auth.enter-otp' | translate}}</h3>
+
+    @if (error()) {
+    <div>
+      <p-message severity="error" icon="pi pi-times-circle"
+        >{{error()}}</p-message
+      >
+    </div>
+    } @if (message()) {
+    <div>
+      <p-message severity="success" icon="pi pi-times-circle"
+        >{{message()}}</p-message
+      >
+    </div>
+    }
+
+    <div class="flex justify-center">
+      @let codeCtrl = form.get("resetCode");
+
+      <p-inputotp formControlName="resetCode" [length]="6" [integerOnly]="true">
+        <ng-template #input let-token let-events="events">
+          <input
+            class="custom-otp-input"
+            (input)="events.input($event)"
+            (keydown)="events.keydown($event)"
+            type="text"
+            [attr.value]="token"
+            [maxLength]="1"
+          />
+        </ng-template>
+      </p-inputotp>
+
+      <app-ctrl-error [inputCtrl]="codeCtrl" fieldName="Code" />
+    </div>
+
+    <app-submit-btn
+      [isSubmitting]="isSubmitting()"
+      [label]="'auth.confirm' | translate"
+      [disable]="form.invalid"
+    />
+
+    <div class="text-center">
+      <p>{{"auth.no-code" | translate}}</p>
+
+      <button
+        class="text-primary underline cursor-pointer"
+        type="button"
+        [disabled]="isSubmitting()"
+        (click)="onResendCode()"
+      >
+        {{"auth.resend-code" | translate}}
+      </button>
+    </div>
+  </form>
+</div>

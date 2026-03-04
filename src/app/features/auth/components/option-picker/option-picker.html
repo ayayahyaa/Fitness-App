@@ -1,0 +1,23 @@
+<div class="flex flex-col gap-4">
+  @for (item of options(); track $index) {
+
+  <button
+    class="border border-input-border rounded-3xl flex justify-between px-4 has-checked:border-primary bg-[#D3D3D333]"
+    (click)="handleClick(item.value)"
+    type="button"
+  >
+    <label [for]="item.label" class="flex-1 py-2"
+      >{{ item.label | translate}}
+    </label>
+
+    <input
+      type="radio"
+      [id]="item.label"
+      [value]="item.value"
+      name="goal"
+      class="accent-primary"
+    />
+  </button>
+
+  }
+</div>

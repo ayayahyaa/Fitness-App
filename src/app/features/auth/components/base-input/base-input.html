@@ -1,0 +1,63 @@
+<input
+  class="border border-[#D3D3D3] rounded-3xl py-2 ps-10 w-full outline-none"
+  [type]="showPassword() ? 'text' : type() "
+  [placeholder]="placeholder()"
+  (input)="onChange()"
+  (blur)="control().markAsTouched()"
+  [(ngModel)]="value"
+/>
+
+@if (type() === "password") {
+
+<button
+  class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer"
+  type="button"
+  (click)="togglePassword()"
+>
+  <span [class]="showPassword() ? '' : 'hidden' ">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0.833496 9.99992C0.833496 9.99992 4.16683 3.33325 10.0002 3.33325C15.8335 3.33325 19.1668 9.99992 19.1668 9.99992C19.1668 9.99992 15.8335 16.6666 10.0002 16.6666C4.16683 16.6666 0.833496 9.99992 0.833496 9.99992Z"
+        stroke="#D3D3D3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+        stroke="#D3D3D3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+
+  <span [class]="showPassword() ? 'hidden' : '' ">
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M5.45012 16.9203C4.34895 15.8765 3.48007 14.6124 2.90012 13.2103C2.80108 12.9797 2.75 12.7313 2.75 12.4803C2.75 12.2293 2.80108 11.981 2.90012 11.7503C3.67032 9.87673 4.96127 8.26304 6.62012 7.10035C8.19462 6.00006 10.0799 5.43239 12.0001 5.48035C13.3817 5.44565 14.752 5.73685 16.0001 6.33035M18.5601 8.05035C19.6554 9.09318 20.5206 10.3535 21.1001 11.7503C21.1992 11.981 21.2502 12.2293 21.2502 12.4803C21.2502 12.7313 21.1992 12.9797 21.1001 13.2103C20.3299 15.084 19.039 16.6977 17.3801 17.8603C15.8056 18.9606 13.9204 19.5283 12.0001 19.4803C10.6185 19.515 9.24821 19.2238 8.00012 18.6303"
+        stroke="#D3D3D3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8.71 13.65C8.56976 13.2759 8.4986 12.8795 8.5 12.48C8.5 11.5517 8.86875 10.6615 9.52513 10.0051C10.1815 9.34875 11.0717 8.98 12 8.98C12.4 8.978 12.796 9.05 13.17 9.19M15.29 11.31C15.43 11.684 15.502 12.08 15.5 12.48C15.5 13.4083 15.1313 14.2985 14.4749 14.9549C13.8185 15.6113 12.9283 15.98 12 15.98C11.6005 15.9814 11.2041 15.9102 10.83 15.77M3 20L19 4"
+        stroke="#D3D3D3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+</button>
+}

@@ -1,0 +1,11 @@
+<button
+  class="bg-primary rounded-3xl py-2 font-extrabold cursor-pointer disabled:cursor-not-allowed disabled:grayscale"
+  [disabled]="disable() || isSubmitting()"
+  type="submit"
+>
+  @if (isSubmitting()) {
+  <i class="pi pi-spin pi-spinner"></i>
+  } @else {
+  <span>{{label()}}</span>
+  }
+</button>

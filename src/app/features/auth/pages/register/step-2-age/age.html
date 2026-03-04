@@ -1,0 +1,17 @@
+<div>
+  <app-progress [stepNum]="2" />
+  <app-register-header
+    [heading]="'auth.age' | translate"
+    [description]="'auth.description' | translate"
+  />
+
+  <form class="flex flex-col gap-6 mt-6" (ngSubmit)="onSubmit()">
+    <app-number-picker
+      [numbersRange]="numbersRange"
+      (payload)="onSelect($event)"
+      unit="Year"
+    />
+
+    <app-submit-btn [label]="'auth.next' | translate" [disable]="!age()" />
+  </form>
+</div>

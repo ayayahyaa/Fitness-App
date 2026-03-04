@@ -1,0 +1,40 @@
+<div>
+  <p class="text-primary text-center mb-2">{{ unit() }}</p>
+  <p-carousel
+    [value]="numbersRange()"
+    [numVisible]="7"
+    [numScroll]="1"
+    [circular]="false"
+    [showIndicators]="false"
+  >
+    <ng-template let-number #item>
+      <div class="flex items-center justify-center gap-1">
+        <label
+          [for]="number"
+          class="has-checked:text-primary has-checked:text-3xl cursor-pointer"
+        >
+          <input
+            [id]="number"
+            class="hidden"
+            type="radio"
+            name="age"
+            (click)="handleClick(number)"
+          />
+          {{ number }}
+        </label>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <div class="flex justify-center items-center">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M20 17L12 7L4 17L20 17Z" fill="#FF4100" />
+    </svg>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<section class="bg-bg-section">
+<div class="lg:mx-20 md:mx-16 sm:mx-12 mx-6 grid grid-cols-1 md:grid-cols-2 gap-12 ">
+
+    <!-- Left Side -->
+    <div class="flex flex-col md:gap-6 gap-4 ">
+        <app-section-title
+            [title]="'why.Title' | translate"
+            [subTitle]="'why.Title' | translate"
+            [subTitlePositionStart]="true">
+        </app-section-title>
+        <h2 class="text-3xl md:text-4xl font-black leading-tight uppercase text-p-text" 
+            [innerHTML] = " 'why.SubTitle' | translate ">
+        </h2>
+        <p class="text-p-text text-base leading-relaxed">
+            {{ 'why.Paragraph' | translate }}
+        </p>
+        <div class="flex flex-col gap-6">
+            <div class="flex items-center gap-4 text-p-text">
+                <div class="w-12 h-12 rounded-full bg-[#FF4100] flex items-center  justify-cente p-4">
+                    <span class="text-white font-bold md:text-lg text-sm leading-none">01</span>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold capitalize">
+                        {{ 'why.Feature1.Title' | translate }}
+                    </h4>
+                    <p class="text-p-text text-sm mt-1">
+                        {{ 'why.Feature1.Paragraph' | translate }}
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-p-text ">
+                <div class="w-12 h-12 rounded-full bg-[#FF4100] flex items-center justify-center p-4">
+                    <span class="text-white font-bold md:text-lg text-sm leading-none">02</span>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold capitalize">
+                        {{ 'why.Feature2.Title' | translate }}
+                    </h4>
+                    <p class="text-p-text text-sm mt-1">
+                        {{ 'why.Feature2.Paragraph' | translate }}
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-p-text ">
+                <div class="w-12 h-12 rounded-full bg-[#FF4100] flex items-center justify-center p-4">
+                    <span class="text-white font-bold md:text-lg text-sm leading-none">03</span>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold  capitalize">
+                        {{ 'why.Feature3.Title' | translate }}
+                    </h4>
+                    <p class="text-p-text text-sm mt-1">
+                        {{ 'why.Feature3.Paragraph' | translate }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Right Side -->
+    <div>
+        <img 
+            src="./images/why-us.png"
+            alt="why choose us"
+            class="md:w-[90%] w-full object-cover rounded-xl">
+    </div>
+</div>
+</section>
+

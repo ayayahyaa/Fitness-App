@@ -1,0 +1,83 @@
+<section class="bg-bg-section backdrop-blur-md" [class.pt-35]="paddingSpace()">
+  <div class="flex lg:flex-row flex-col-reverse gap-13 py-5 main-padding">
+    <div class="flex-1">
+    
+      <img src="/images/about.png" alt="Muscles" class="h-auto w-full" />
+    </div>
+    <div class="flex-1">
+      <!-- Right side: Content (on desktop) / Top (on mobile) -->
+      <div class="flex flex-col justify-center gap-5 me-4">
+        <!-- About Us label -->
+        <app-section-title
+          [title]=" 'about.Title' | translate "
+          [subTitle]="'about.Title' | translate"
+          [subTitlePositionStart]="true"
+        ></app-section-title>
+
+        <!-- Main heading with highlighted text -->
+        <div class="relative inline-block">
+          <h2 class="main-heading" [innerHTML]="'about.SubTitle' | translate">
+          </h2>
+          <span class="absolute inset-0 workouts translate-y-1 hidden md:flex">
+            {{'about.Title'|translate}}
+          </span>
+        </div>
+        <!-- Description text -->
+        <p class="text-p-text font-rubik text-lg">
+          {{'about.Paragraph'|translate}}
+        </p>
+
+        <!-- Features grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3 mt-3">
+          @for (feature of features; track $index) { @if($index%2===0
+          &&$index!==0){
+          <div class="md:col-span-2 border border-[#242424]/14"></div>
+          }
+
+          <div class="flex flex-col pb-3">
+            <!-- Feature icon -->
+            <div class="flex gap-2 items-center">
+              <svg
+                width="35"
+                height="35"
+                viewBox="0 0 35 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_99_1393)">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M22.6872 11.1456C20.9633 12.8695 17.8844 12.933 16.2287 11.2773L15.5499 10.5985L14.1357 12.0127L14.8145 12.6916C16.0188 13.8958 17.6984 14.4752 19.3914 14.4414L10.6664 23.1664L12.024 24.524L20.749 15.799C20.7152 17.4919 21.2946 19.1716 22.4988 20.3759L23.1777 21.0547L24.5919 19.6405L23.9131 18.9617C22.2574 17.306 22.3209 14.2271 24.0449 12.5032L24.752 11.7961L23.3943 10.4385L22.6872 11.1456Z"
+                    fill="#FF4100"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_99_1393">
+                    <rect
+                      width="25"
+                      height="24"
+                      fill="white"
+                      transform="translate(0 17.6777) rotate(-45)"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+              <h3 class="font-bold font-baloo text-title-text mb-1">
+                {{ feature.title }}
+              </h3>
+            </div>
+
+            <!-- Feature content -->
+            <p class="text-lg font-inter text-title-text">
+              {{ feature.description }}
+            </p>
+          </div>
+          }
+        </div>
+
+        <!-- CTA Button -->
+        <app-primary-btn [text]="'about.start' | translate" type="filled"></app-primary-btn>
+      </div>
+    </div>
+  </div>
+</section>

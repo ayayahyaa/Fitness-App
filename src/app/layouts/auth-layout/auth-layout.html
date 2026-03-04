@@ -1,0 +1,27 @@
+<section class="relative">
+  <img
+    class="-z-10"
+    ngSrc="images/auth-bg.png"
+    alt="background image"
+    priority="true"
+    fill
+  />
+
+  <main
+    class="grid grid-cols-1 sm:grid-cols-2 min-h-dvh bg-[#24242499] backdrop-blur-2xl"
+  >
+    <div
+      class="relative sm:flex flex-col items-center justify-start hidden border-e-2 border-primary/20 shadow-[0_4px_80px_47px_rgba(0,0,0,0.25)]"
+    >
+      <img ngSrc="images/logo.png" width="150" height="150" alt="logo" />
+
+      <div class="relative w-[95%] h-full">
+        <img ngSrc="images/auth.png" fill alt="auth image" priority="true" />
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center text-white p-4">
+      <router-outlet />
+    </div>
+  </main>
+</section>

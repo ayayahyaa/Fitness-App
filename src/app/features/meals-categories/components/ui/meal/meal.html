@@ -1,0 +1,22 @@
+<div
+  class="flex flex-row items-center gap-4 border-bottom m-4 pb-3 cursor-pointer"
+  (keyup.space)="getMealDetails(meal())"
+  tabindex="0"
+  (click)="getMealDetails(meal())"
+>
+  <div class="rounded-3xl min-w-[81px] h-[88px] relative">
+    <img
+      [ngSrc]="meal().strMealThumb"
+      alt="Lunch"
+      class="absolute inset-0 w-full h-full object-cover rounded-3xl"
+      width="81"
+      height="88"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="flex flex-col gap-1 font-baloo text-p-text">
+    <h3 class="font-medium text-lg line-clamp-1">{{meal().strMeal}}</h3>
+    <p class="font-normal text-sm line-clamp-2">{{meal().strMeal}}</p>
+  </div>
+</div>

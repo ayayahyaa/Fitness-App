@@ -1,0 +1,35 @@
+<section class="text-center pt-30 bg-bg-workouts">
+    <!-- Section Title -->
+    <app-section-title
+    [title]="'WORKOUTS_PAGE.TITLE' | translate"
+    [subTitle]="'WORKOUTS_PAGE.SUBTITLE' | translate"
+    [subTitlePositionStart]="false"
+    class="flex justify-center pt-[15px]">
+    </app-section-title>
+
+    <div class="bg-img pt-7">
+    <!-- Description -->
+    <h1
+    class="font-baloo font-bold text-[2.5rem] leading-[120%] tracking-[0%] text-center text-title-text uppercase mb-2"
+    [innerHTML]="'WORKOUTS_PAGE.DESCRIPTION' | translate">
+    </h1>
+
+    <!-- Tabs -->
+    <app-taps
+    [data]="muscleGroupsSignal()"
+    [carouselType]="'muscles'"
+    [selected]="selectedGroupIdSignal()"
+    (tabClicked)="onGroupSelected($event)">
+</app-taps>
+
+    <!-- Caursoul -->
+    <div class="main-padding">
+    <app-multi-row-carousel
+    [data]="data"
+    (itemClicked)="goToDetails($any($event))">
+    </app-multi-row-carousel> 
+</div>
+</div>
+</section>
+
+

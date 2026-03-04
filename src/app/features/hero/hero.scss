@@ -1,0 +1,33 @@
+
+  .hero{
+    display: block;
+    position: relative;
+    height: 100%;
+    background-image: url(./../../../../public/images/hero-background.png);
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+    //  background-attachment: fixed;
+    //  overflow-y: hidden;
+}
+
+.overlay {
+  // position: absolute;
+  inset: 0;
+  // background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(86.0999984741211px);
+
+  // backdrop-filter: blur(86px);
+  // -webkit-backdrop-filter: blur(86px);
+    top: 0;
+    left: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    
+}
+.hero-details{
+  // padding: 200px 80px 0px 80px;
+  // padding-top: 200px;
+  // padding-left: 30px;
+}

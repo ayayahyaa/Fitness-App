@@ -1,0 +1,156 @@
+{
+  "name": "elevate-super-fitness",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "includedScripts": [],
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "./src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/elevate-super-fitness/browser",
+        "index": "./src/index.html",
+        "main": "./src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "public"
+          }
+        ],
+        "styles": [
+          "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+          "./node_modules/primeicons/primeicons.css",
+          "./src/styles.scss"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "elevate-super-fitness:build:production"
+        },
+        "development": {
+          "buildTarget": "elevate-super-fitness:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "elevate-super-fitness:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["./src"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectName}"],
+      "options": {
+        "jestConfig": "jest.config.app.ts",
+        "tsConfig": "tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "elevate-super-fitness:build",
+        "spa": true
+      }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/elevate-super-fitness/server",
+        "main": "src/server.ts",
+        "tsConfig": "tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "continuous": true,
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "elevate-super-fitness:build:development",
+          "serverTarget": "elevate-super-fitness:server:development"
+        },
+        "production": {
+          "browserTarget": "elevate-super-fitness:build:production",
+          "serverTarget": "elevate-super-fitness:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@angular-devkit/build-angular:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "elevate-super-fitness:build:development",
+          "serverTarget": "elevate-super-fitness:server:development"
+        },
+        "production": {
+          "browserTarget": "elevate-super-fitness:build:production",
+          "serverTarget": "elevate-super-fitness:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

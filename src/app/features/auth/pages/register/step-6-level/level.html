@@ -1,0 +1,17 @@
+<div>
+  <app-progress [stepNum]="6" />
+  <app-register-header
+    [heading]="'auth.level' | translate"
+    [description]="'auth.description' | translate"
+  />
+
+  <form class="flex flex-col gap-6 mt-6" (ngSubmit)="onSubmit()">
+    <app-option-picker [options]="options" (payload)="onSelect($event)" />
+
+    <app-submit-btn
+      [label]="'auth.register' | translate"
+      [disable]="!level()"
+      [isSubmitting]="isSubmitting()"
+    />
+  </form>
+</div>

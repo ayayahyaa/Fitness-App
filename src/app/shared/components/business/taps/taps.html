@@ -1,0 +1,28 @@
+<div class="tabs-container flex items-center my-5 justify-center px-2 pb-8 sm:px-0">
+    <!-- Prev button -->
+<button
+    class="py-1 rounded text-4xl text-title-text cursor-pointer"
+    (click)="prevSlide()">
+    ‹
+</button>
+    <!--  Taps -->
+    <div class="tabs flex gap-2">
+    @for (item of visibleTabs; track item.id) {
+        <button
+        (click)="selectTab(item.id)"
+        [class.active]="item.id === selectedItemId"
+        class="px-4 py-2 rounded font-semibold transition-colors text-sm sm:text-base min-w-[90px]">
+        {{ item.label }}
+    </button>
+    }
+</div>
+    <!-- Next button -->
+    <button
+    class="py-1 rounded text-4xl text-title-text cursor-pointer"
+    (click)="nextSlide()">
+    ›
+</button>
+</div>
+
+
+

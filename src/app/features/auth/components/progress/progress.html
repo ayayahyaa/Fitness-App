@@ -1,0 +1,13 @@
+<div class="flex justify-center">
+  <p-knob
+    [(ngModel)]="stepNum"
+    [min]="1"
+    [max]="6"
+    valueColor="#ff4100"
+    textColor="#fff"
+    rangeColor="transparent"
+    strokeWidth="5"
+    [readonly]="true"
+    [valueTemplate]="`${stepNum} / 6`"
+  />
+</div>

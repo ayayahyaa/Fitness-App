@@ -1,0 +1,137 @@
+<section class="pt-32 md:pt-40 pb-6 relative overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-[url('/images/bg.jpg')] bg-cover bg-no-repeat bg-center"></div>
+  <!-- Blur Overlay -->
+  <div class="absolute inset-0 bg-bg-workouts backdrop-blur-[80px]"></div>
+  <div class="relative z-10 px-4 md:px-8 lg:px-16">
+    <div class="flex flex-col lg:flex-row gap-8 ">
+      <!-- Sidebar -->
+      <aside
+        class="w-full lg:w-96 border-dark-border rounded-2xl backdrop-blur-xl flex flex-col max-h-[750px]">
+        <!-- Levels -->
+        <div class="p-4 sticky top-0 z-20 bg-bg-workouts backdrop-blur-lg border-b border-dark-border rounded-t-2xl">
+          <div class="flex items-center gap-3">
+            @if (difficultyLevels().length > 3) {
+            <button 
+          class="p-2 rounded-full transition disabled:opacity-40 cursor-pointer"
+          [disabled]="currentLevelIndex() === 0"
+          (click)="prevLevel()">
+          <i class="pi pi-arrow-left" [ngStyle]="{'color': 'var(--p-text)'}"></i>
+        </button>
+}
+            <div class="flex gap-3 flex-1">
+              @for (level of visibleLevels(); track level.id) {
+                <button 
+                  class="flex-1 py-2 px-2 rounded-2xl text-sm md:text-base font-medium transition-all duration-300 cursor-pointer"
+                  [ngClass]="selectedLevelId() === level.id ? 'shadow-lg scale-105' : ''"
+                  [ngStyle]="selectedLevelId() === level.id
+                    ? {'background-color': 'var(--primay-color)', 'color': 'var(--bg-section)'}
+                    : {'background-color': 'var(--bg-workouts)', 'color': 'var(--p-text)'}"
+                  (click)="selectLevel(level.id)">
+                  {{ level.name }}
+                </button>
+              }
+            </div>
+            @if (difficultyLevels().length > 3){
+              <button 
+          class="p-2 rounded-full transition disabled:opacity-40 cursor-pointer"
+          [disabled]="currentLevelIndex() + 3 >= difficultyLevels().length"
+          (click)="nextLevel()">
+          <i class="pi pi-arrow-right" [ngStyle]="{'color': 'var(--p-text)'}"></i>
+</button>
+}
+
+          </div>
+        </div>
+        <!-- Exercises -->
+        <div class="p-4 space-y-4 overflow-y-auto hide-scroll border-t-0 border-l-0 border-r-0 border-b border-dark-border">
+          @for (ex of exercises(); track ex._id) {
+            <button
+              type="button"
+              class="group w-full flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 cursor-pointer"
+              (click)="selectExercise(ex)">
+              <div class="w-16 h-16 md:w-18 md:h-18 rounded-xl overflow-hidden flex-shrink-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800"
+                  [alt]="ex.exercise"
+                  class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 text-left min-w-0">
+                <h4 class="font-semibold truncate" [ngStyle]="{'color': 'var(--p-text)'}">
+                  {{ ex.primary_equipment }}
+                </h4>
+                <p class="text-sm mt-1 truncate" [ngStyle]="{'color': 'var(--p-text)'}">
+                  {{ ex.exercise }}
+                </p>
+              </div>
+              <a 
+                [href]="ex.in_depth_youtube_explanation_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[#FF4100] hover:scale-110 transition-transform cursor-pointer">
+                <i class="pi pi-youtube text-2xl"></i>
+              </a>
+            </button>
+            <div class="h-px mx-auto" style="background-color: #444;"></div>
+}
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col mt-7">
+        <div class="relative h-[45vh] md:h-[55vh] rounded-2xl overflow-hidden">
+          <img
+            [src]="'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800'"
+            [alt]="selectedExercise()?.exercise"
+            class="absolute inset-0 w-full h-full object-cover"
+            [ngStyle]="{'filter': 'brightness(0.55)'}"/>
+          <div class="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-10"
+            [ngStyle]="{'background': 'linear-gradient(to top, var(--bg-section)/90, var(--bg-overlay)/60, transparent/30)'}">
+            <div class="max-w-4xl mx-auto text-center">
+              <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4"
+                  [ngStyle]="{'color': 'var(--p-text)'}">
+                {{ selectedExercise()?.primary_equipment }}
+              </h1>
+              <p class="text-lg md:text-xl" [ngStyle]="{'color': 'var(--p-text)'}">
+                {{ selectedExercise()?.exercise }}
+              </p>
+            </div>
+          </div>
+          <a
+            [href]="selectedExercise()?.short_youtube_demonstration_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-20 h-20 md:w-28 md:h-28 flex items-center justify-center shadow-2xl transition cursor-pointer"
+            [ngStyle]="{'background-color': 'var(--primay-color)'}">
+            <span class="text-4xl md:text-6xl text-white">▶</span>
+          </a>
+        </div>
+        
+        <!-- Features -->
+        <div class="flex flex-col md:flex-row gap-6 md:gap-12 py-8">
+          <div class="flex items-center gap-3 text-sm md:text-base cursor-pointer" [ngStyle]="{'color': 'var(--p-text)'}">
+            <span class="bg-[#FF4100] p-2 rounded-full">➜</span>
+          {{ 'ClassesDetails.p-1' | translate}}          
+        </div>
+          <div class="flex items-center gap-3 text-sm md:text-base cursor-pointer" [ngStyle]="{'color': 'var(--p-text)'}">
+            <span class="bg-[#FF4100] p-2 rounded-full">➜</span>
+          {{ 'ClassesDetails.p-2' | translate}}         
+          </div>
+          <div class="flex items-center gap-3 text-sm md:text-base cursor-pointer" [ngStyle]="{'color': 'var(--p-text)'}">
+            <span class="bg-[#FF4100] p-2 rounded-full">➜</span>
+          {{ 'ClassesDetails.p-3' | translate}}            
+        </div>
+        </div>
+            <div>
+          <!-- Recommendation -->
+    <div class="flex items-center gap-3 text-3xl  capitalize" [ngStyle]="{'color': 'var(--p-text)'}">
+          {{ 'ClassesDetails.Recommendation' | translate}}            
+        </div>
+<app-meals-categories></app-meals-categories>
+</div>
+      </main>
+    </div>
+  </div>
+  
+</section>
+

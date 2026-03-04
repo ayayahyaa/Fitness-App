@@ -1,0 +1,21 @@
+<section
+  id="healthy-nutritions"
+  class="bg-[url(/images/healthBg.jpg)] h-auto bg-cover bg-center bg-no-repeat relative pb-3 ">
+  <div class="flex flex-col items-center gap-6.25 main-padding text-center">
+    <app-section-title
+    [title]="'Healthy_Nutritions.TITLE' | translate"
+      [subTitle]="'Healthy_Nutritions.SUBTITLE' | translate"
+      [subTitlePositionStart]="false"
+      class="flex justify-center m-auto pt-3.75 z-10">
+    </app-section-title>
+
+    <h2 class="main-heading z-10 md:w-150 m-auto"
+    [innerHTML]="'Healthy_Nutritions.DESCRIPTION' | translate">
+    </h2>
+    <app-meals-categories class="z-10"></app-meals-categories>
+  </div>
+  <div
+    class="h-103.5 w-full bg-bg-gray backdrop-blur-[86px] absolute top-15.25 z-0"
+  ></div>
+</section>
+

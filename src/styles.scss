@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'primeicons/primeicons.css';
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Baloo Thambi 2';
+  src: url('/fonts/BalooThambi2-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-theme='light'] {
+  --primay-color: #ff4100;
+  --bg-section: rgba(255, 255, 255, 0.95);
+  --bg-overlay: rgba(255, 255, 255, 0.6);
+  --title-text: #242424;
+  --p-text: #242424;
+  --bg-card: #c7c6c3;
+  --bg-workouts: #a8a7a7;
+  --bg-gray: #ffffff99;
+  --card-overlay-bg: rgba(255, 255, 255, 0.5);
+
+}
+/* define dark theme */
+[data-theme='dark'] {
+  --primay-color: #ff4100;
+  --bg-section: #242424f2;
+  --bg-overlay: #242424f2;
+  --title-text: #f3f3f4;
+  --p-text: #f3f3f4;
+  --bg-card: #212121;
+  --bg-workouts: #212121;
+  --bg-gray: #24242499;
+  --dark-border: #f3f3f424;
+  --card-overlay-bg: rgba(36, 36, 36, 0.5);
+}
+
+@theme {
+  --font-rubik: 'Rubik';
+  --font-baloo: 'Baloo Thambi 2';
+  --font-inter: 'Inter';
+  --color-bg-section: var(--bg-section);
+  --color-bg-overlay: var(--bg-overlay);
+  --color-primary: var(--primay-color);
+  --color-title-text: var(--title-text);
+  --color-p-text: var(--p-text);
+  --color-bg-gray: var(--bg-gray);
+  --color-dark-border: var(--dark-border);
+  --color-bg-card: var(--bg-card);
+  --color-bg-workouts: var(--bg-workouts);
+  --color-card-overlay-bg: var(--card-overlay-bg);
+}
+
+:root {
+  --p-carousel-indicator-active-background: #ff4100 !important;
+  --p-carousel-indicator-background: black !important;
+  --p-carousel-indicator-hover-background: black !important;
+}
+[data-theme='dark'] {
+  --p-carousel-indicator-background: white !important;
+  --p-carousel-indicator-hover-background: white !important;
+  --p-carousel-indicator-active-background: #ff4100 !important;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator:hover {
+  background-color: var(--p-carousel-indicator-background) !important;
+}
+
+.p-carousel-indicator button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--p-text);
+  transition: all 0.3s ease;
+}
+
+.p-carousel-indicator.p-carousel-indicator-active button {
+  width: 22px;
+  border-radius: 6px;
+}
+
+
+html {
+  //background-color: var(--primay-color);
+  font-family: 'Baloo Thambi 2';
+}
+
+/* Global container */
+.app-container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+/* components: reusable class patterns */
+@layer components {
+  .main-heading {
+    @apply text-xl md:text-4xl font-bold font-baloo capitalize text-title-text;
+  }
+  .main-padding {
+    @apply px-4 md:px-20;
+  }
+  .card-title {
+    @apply font-baloo font-bold uppercase text-xl tracking-[2.24px] text-title-text mb-2;
+  }
+  .border-bottom {
+    @apply border-b border-[#2D2D2D] mt-1;
+  }
+  .setting-box {
+    @apply flex flex-col items-center justify-center  border border-p-text p-8 rounded-2xl w-[209px] h-[168px] cursor-pointer;
+  }
+  .bg-container {
+    @apply flex items-center gap-15 border border-p-text bg-primary backdrop-blur-sm rounded-3xl py-2 px-4;
+  }
+}
+.workouts {
+  font-family: 'Baloo Thambi 2', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  /* Make text transparent */
+  color: transparent;
+  -webkit-text-stroke: 2px transparent;
+  /* Gradient stroke */
+  border: 1px solid;
+  background: linear-gradient(177.84deg, #242424, #fff);
+
+  -webkit-mask: linear-gradient(#fff 0 0) text, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hide-scroll {
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

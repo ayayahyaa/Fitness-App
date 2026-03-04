@@ -1,0 +1,27 @@
+<button
+  class="px-6 py-3 rounded-full relative cursor-pointer border"
+  [ngClass]="{
+      'bg-transparent text-primary border-primary': type === 'outlined',
+      'bg-primary text-white border-primary': type === 'filled'
+    }"
+>
+  {{text}}
+  <div
+    class="rounded-full w-[35.36px] h-[35.36px] bg-primary flex items-center justify-center border-3 border-white absolute ltr:end-0 rtl:start-0 top-1/2 -translate-y-1/2 translate-x-1/2"
+  >
+    <svg
+      width="35"
+      height="35"
+      viewBox="0 0 35 35"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M22.0973 11.137C20.3733 12.8609 17.2317 12.8616 15.507 11.137L14.7999 10.4299L13.3857 11.8441L14.0928 12.5512C15.3472 13.8056 17.074 14.4321 18.8014 14.4328L10.0765 23.1578L11.4907 24.572L20.2157 15.847C20.2164 17.5745 20.8429 19.3012 22.0973 20.5557L22.8044 21.2628L24.2186 19.8485L23.5115 19.1414C21.7868 17.4168 21.7876 14.2751 23.5115 12.5512L24.2186 11.8441L22.8044 10.4299L22.0973 11.137Z"
+        fill="#F3F3F4"
+      />
+    </svg>
+  </div>
+</button>

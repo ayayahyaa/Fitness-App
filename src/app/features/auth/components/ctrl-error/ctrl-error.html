@@ -1,0 +1,22 @@
+@if (inputCtrl().errors && inputCtrl().touched) { 
+
+    @if (inputCtrl().errors['required']) {
+      <p-message severity="error" variant="simple" styleClass="mt-1">
+        {{fieldName()}} {{'auth.required' | translate}}
+      </p-message>}
+
+    @if(inputCtrl().errors['email']) {
+      <p-message severity="error" variant="simple" styleClass="mt-1">
+        {{fieldName()}} {{'auth.invalid' | translate}}
+      </p-message>}
+      
+    @if (inputCtrl().errors['pattern']) {
+      <p-message severity="error" variant="simple" styleClass="mt-1">
+        {{'auth.password-pattern' | translate}}
+      </p-message>}
+
+    @if(inputCtrl().errors['misMatch']) {
+      <p-message severity="error" variant="simple" styleClass="mt-1">
+        {{'auth.password-mismatch' | translate}}
+      </p-message>}
+}

@@ -1,0 +1,193 @@
+<nav
+  class="absolute top-0 left-0 w-full z-40 min-w-[343px] mx-auto pt-8 pr-4 pl-4 pb-6 md:pt-10 md:pl-20 md:pr-20"
+>
+  <div class="flex flex-wrap items-center justify-between">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img
+        [src]="themeService.theme() === 'dark'
+    ? './images/logo.png'
+    : './images/fitLogo.png'"
+        alt="Logo"
+        class="w-24"
+      />
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <div class="hidden lg:flex gap-6">
+        @if(!isLogged()){
+        <a routerLink="/auth/login">
+          <app-primary-btn
+            text="{{'navbar.filled-btn' |translate}}"
+            type="filled"
+          />
+        </a>
+
+        <a routerLink="/auth/register">
+          <app-primary-btn
+            text="{{'navbar.outlined-btn' |translate}}"
+            type="outlined"
+          />
+        </a>
+        } @else {
+        <a routerLink="/account">
+          <img src="./images/user.png" alt="" />
+        </a>
+        }
+      </div>
+
+      <p-drawer
+        #drawerRef
+        [(visible)]="visible"
+        [style]="{height:'500px',background:'var(--bg-section)' , border:'none' }"
+      >
+        <ng-template #headless>
+          <div class="flex flex-col h-[550px]">
+            <div class="flex items-center px-3 pt-4 shrink-0">
+              <span class="inline-flex items-center gap-2">
+                <span class="font-semibold text-2xl text-primary">
+                  <a
+                    href="/"
+                    class="flex items-center space-x-3 rtl:space-x-reverse"
+                  >
+                    <img
+                      [src]="themeService.theme() === 'dark'
+    ? './images/logo.png'
+    : './images/fitLogo.png'"
+                      alt="Logo"
+                      class="w-24"
+                    />
+                  </a>
+                </span>
+              </span>
+            </div>
+            <div class="overflow-y-auto">
+              <ul class="list-none p-4 m-0">
+                <li>
+                  <ul class="list-none p-0 m-0 overflow-hidden">
+                    <li>
+                      <a
+                        pRipple
+                        class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+                      >
+                        <a
+                          routerLink="/"
+                          routerLinkActive="text-primary"
+                          [routerLinkActiveOptions]="{exact:true}"
+                          class="block py-2 px-3 text-p-text text-xl font-bold bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+                          aria-current="page"
+                        >
+                          {{'navbar.home' | translate}}
+                        </a>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        pRipple
+                        class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+                      >
+                        <a
+                          routerLink="/about"
+                          routerLinkActive="text-primary"
+                          [routerLinkActiveOptions]="{exact:true}"
+                          class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+                          >{{'navbar.about' | translate}}
+                        </a>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        pRipple
+                        class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+                      >
+                        <a
+                          routerLink="/classes"
+                          routerLinkActive="text-primary"
+                          [routerLinkActiveOptions]="{exact:true}"
+                          class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+                          >{{'navbar.classes' | translate}}
+                        </a>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        pRipple
+                        class="flex items-center cursor-pointer p-4 rounded-border text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 duration-150 transition-colors p-ripple"
+                      >
+                        <a
+                          routerLink="/healthy"
+                          routerLinkActive="text-primary"
+                          [routerLinkActiveOptions]="{exact:true}"
+                          class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+                          >{{'navbar.healthy' | translate}}
+                        </a>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ng-template>
+      </p-drawer>
+
+      <div class="flex gap-4 lg:hidden items-center max-w-[110px]">
+        <a routerLink="/account">
+          <img src="./images/user.png" alt="" />
+        </a>
+
+        <p-button
+          (click)="visible = true"
+          icon="pi pi-bars"
+          class="btn-wrapper block lg:hidden"
+          styleClass="menu-btn "
+        />
+      </div>
+    </div>
+    <div
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+      id="navbar-sticky"
+    >
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium md:gap-8 rtl:space-x-reverse md:flex-row md:mt-0"
+      >
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="text-primary"
+            [routerLinkActiveOptions]="{exact:true}"
+            class="block py-2 px-3 text-p-text text-xl font-bold bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+            aria-current="page"
+            >{{'navbar.home' | translate}}
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="text-primary"
+            [routerLinkActiveOptions]="{exact:true}"
+            class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+            >{{'navbar.about' | translate}}
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/classes"
+            routerLinkActive="text-primary"
+            [routerLinkActiveOptions]="{exact:true}"
+            class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+            >{{'navbar.classes' | translate}}
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/healthy"
+            routerLinkActive="text-primary"
+            [routerLinkActiveOptions]="{exact:true}"
+            class="block py-2 px-3 font-bold text-xl text-p-text bg-transparent rounded-sm md:p-0 md:dark:text-p-text"
+            >{{'navbar.healthy' | translate}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

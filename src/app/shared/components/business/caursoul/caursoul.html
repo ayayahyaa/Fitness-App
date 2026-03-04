@@ -1,0 +1,19 @@
+@if (data?.length > 0) {
+    <p-carousel
+    [value]="data"
+    [numVisible]="3"
+    [numScroll]="3"
+    [responsiveOptions]="responsiveOptions"
+    class="w-full">
+    <ng-template pTemplate="item" let-data>
+        <app-card
+            [data]="data"
+            (cardClick)="itemClicked.emit(data)">
+        </app-card>
+    </ng-template>
+    </p-carousel>
+} @else {
+    <div class="text-center text-white py-5 text-4xl">
+    {{ 'card.no-data' | translate }}
+    </div>
+}

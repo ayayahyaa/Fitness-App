@@ -1,0 +1,122 @@
+.chatbot {
+  position: relative;
+}
+
+.chatbot::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: rgba(255, 65, 0, 1);
+  filter: blur(63.92px);
+  border-radius: 9999px;
+  z-index: -1;
+}
+
+.chat{
+    // display: block;
+    position: absolute;
+    height: 100%;
+    background-image: url(./../../../../public/images/chat.jpg);
+    background-size: cover;
+    background-position: center  ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: hidden;
+  }
+
+.overlay{
+position: absolute;
+inset: 0;
+background: #1A1A1A80;
+backdrop-filter: blur(8.5px);
+top: 0;
+left: 0;
+padding: 0;
+height: 100%;
+width: 100%;
+}
+
+
+
+/* Floating button position */
+.chatbot-btn {
+  right: 20px;
+  bottom: 20px;
+}
+
+.chatbot-btn.open {
+  transform: translateY(-140px);
+}
+
+/* Chat window responsive */
+.chat-window {
+  max-height: 70vh;
+  width: 95%;
+  max-width: 380px;
+}
+
+
+:host ::ng-deep .menu-btn.p-button {
+  background: transparent !important;
+  border: none !important;
+  width: 2.9rem !important;
+  height: 2.9rem !important;
+  border-radius: 50% !important;
+
+  --p-button-icon-color: rgba(255, 65, 0, 1) !important;
+  --p-button-hover-icon-color: rgba(255, 65, 0, 1) !important;
+  --p-button-active-icon-color: rgba(255, 65, 0, 1) !important;
+}
+
+
+:host ::ng-deep .menu-btn.p-button .p-button-icon {
+  color: rgba(255, 65, 0, 1)!important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: inline-block !important;
+}
+
+:host ::ng-deep .menu-btn .p-button .p-button-icon,
+:host ::ng-deep .menu-btn .p-button .icon,
+:host ::ng-deep .menu-btn .p-button [data-pc-section="icon"] {
+  color: rgba(255, 65, 0, 1) !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+
+:host ::ng-deep button.close-btn,
+:host ::ng-deep button.close-btn.p-button,
+:host ::ng-deep button.close-btn.p-button.p-button-icon-only {
+  /* background */
+  background: rgba(255, 65, 0, 1) !important;
+  background-image: none !important;
+  background-color: rgba(255, 65, 0, 1) !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  line-height: 32px !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  --p-button-icon-color: rgba(255, 65, 0, 1) !important;
+  --p-button-hover-icon-color: rgba(255, 65, 0, 1) !important;
+  --p-button-active-icon-color: rgba(255, 65, 0, 1) !important;
+}
+
+.toggle{
+  background-color: rgba(36, 36, 36, 0.8);
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+#chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-container::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+    background: rgb(96, 95, 95);
+}

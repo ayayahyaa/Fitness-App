@@ -1,0 +1,18 @@
+.tabs button {
+    color: var(--p-text);
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 8px;
+    size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.tabs button.active {
+    background-color: #ff4100;
+}
+
+.tabs button.active {
+    color: var(--bg-section);
+}

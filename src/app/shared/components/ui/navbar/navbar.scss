@@ -1,0 +1,72 @@
+:host ::ng-deep .menu-btn.p-button {
+  background: rgba(255, 65, 0, 1) !important;
+  border: none !important;
+  width: 2.9rem !important;
+  height: 2.9rem !important;
+  border-radius: 50% !important;
+
+  --p-button-icon-color: #fff !important;
+  --p-button-hover-icon-color: #fff !important;
+  --p-button-active-icon-color: #fff !important;
+}
+
+
+:host ::ng-deep .menu-btn.p-button .p-button-icon {
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: inline-block !important;
+}
+
+:host ::ng-deep .menu-btn .p-button .p-button-icon,
+:host ::ng-deep .menu-btn .p-button .icon,
+:host ::ng-deep .menu-btn .p-button [data-pc-section="icon"] {
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+
+:host ::ng-deep button.close-btn,
+:host ::ng-deep button.close-btn.p-button,
+:host ::ng-deep button.close-btn.p-button.p-button-icon-only {
+  /* background */
+  background: rgba(255, 65, 0, 1) !important;
+  background-image: none !important;
+  background-color: rgba(255, 65, 0, 1) !important;
+
+  /* زر دائري */
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  line-height: 32px !important;
+
+  /* إزالة أي حدود/ظل */
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  /* تغيير CSS variables اللي Theme بيستخدمها */
+  --p-button-icon-color: #fff !important;
+  --p-button-hover-icon-color: #fff !important;
+  --p-button-active-icon-color: #fff !important;
+}
+
+/* التأكد أن الـ pseudo element أو span يظهر باللون الأبيض */
+:host ::ng-deep button.close-btn .p-button-icon,
+:host ::ng-deep button.close-btn .icon,
+:host ::ng-deep button.close-btn span.p-button-icon {
+  color: #fff !important;
+  fill: #fff !important;
+  opacity: 1 !important;
+  font-size: 1.2rem !important;
+  display: inline-block !important;
+}
+
+/* حاجة إضافية لو PrimeNG يضيف كلاس مختلف عند hover/active */
+:host ::ng-deep button.close-btn:hover {
+  background: rgba(255, 65, 0, 1) !important;
+}
+

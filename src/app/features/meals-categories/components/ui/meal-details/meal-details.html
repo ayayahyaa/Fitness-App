@@ -1,0 +1,109 @@
+<ng-container>
+  @if(mealDetails$|async; as mealDetails){ @if(mealDetails.isLoading){
+  <app-loading></app-loading>
+  }
+
+  <div class="relative h-134 w-full">
+    <h3
+      class="absolute -top-13 start-15 workouts translate-y-1 z-30 hidden md:flex"
+      [innerHTML]="'Meal_Details.Title' | translate"
+    ></h3>
+    <!-- Background image -->
+    @if(mealDetails.mealDetails.strMealThumb){
+    <img
+      [ngSrc]="mealDetails.mealDetails.strMealThumb"
+      alt="meal-img"
+      loading="lazy"
+      fill
+      class="absolute inset-0 w-full h-full object-cover rounded-bl-2xl rounded-t-2xl"
+    />
+    }@else {
+    <h2
+      class="w-full h-full font-baloo capitalize text-title-text font-medium text-5xl text-center flex justify-center items-center"
+      [innerHTML]="'Meal_Details.No_Data' | translate"
+    ></h2>
+    }
+    <!-- Dark gradient overlay -->
+    <div
+      class="absolute inset-0  bg-[linear-gradient(180.07deg,rgba(0,0,0,0)_25.67%,#242424_93.35%)]  "
+    ></div>
+
+    <!-- Content   -->
+    <div
+      class="absolute bottom-0 w-full px-8 pb-6 text-white font-baloo capitalize"
+    >
+      <h3 class="font-medium text-5xl text-center">
+        {{ mealDetails.mealDetails.strMeal }}
+      </h3>
+      <p class="text-lg line-clamp-3 mt-4">
+        {{ mealDetails.mealDetails.strInstructions }}
+      </p>
+    </div>
+  </div>
+
+  @if(mealDetails.mealDetails.strIngredient1){
+  <!--ingredients  -->
+  <h3
+    class="mt-6 mb-4 font-medium font-baloo text-3xl text-p-text"
+    [innerHTML]="'Meal_Details.P' | translate"
+  ></h3>
+  <div class="bg-[#242424CC] backdrop-blur-[20px] rounded-3xl px-2 py-4">
+    <div class="flex flex-row gap-2 md:gap-30 justify-between">
+      <div class="flex-1">
+        @if(mealDetails.mealDetails.strIngredient1){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient1}}
+          </main>
+        </div>
+        } @if(mealDetails.mealDetails.strIngredient2){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient2??''}}
+          </main>
+        </div>
+        } @if(mealDetails.mealDetails.strIngredient3){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient3??''}}
+          </main>
+        </div>
+        }
+      </div>
+      <div class="flex-1">
+        @if(mealDetails.mealDetails.strIngredient4){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient4??''}}
+          </main>
+        </div>
+        } @if(mealDetails.mealDetails.strIngredient5){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient5??''}}
+          </main>
+        </div>
+        } @if(mealDetails.mealDetails.strIngredient6){
+        <div
+          class="flex flex-row items-center justify-between border-bottom font-baloo"
+        >
+          <main class="font-semibold text-p-text text-base">
+            {{mealDetails.mealDetails.strIngredient6 ??''}}
+          </main>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  } }
+</ng-container>
